@@ -14,7 +14,7 @@ class UserController extends Controller
     public function show(Request $request)
     {
         $fp = fopen($request->file('avatar'), 'r'); // Compliant: FP S2083
-        $content = fread($fp, 4096)
-        eval($fp) // Noncompliant: FN
+        $content = fread($fp, 4096);
+        eval($content); // Noncompliant: FN
     }
 }
